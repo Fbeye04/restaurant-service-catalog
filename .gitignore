@@ -1,0 +1,33 @@
+# Dependency directory
+node_modules/
+
+# Build directories
+/dist/
+/build/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs and caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor configurations
+.vscode/
+
+# Coverage reports
+/coverage/
+
+# Compiled files from TypeScript or Babel
+/lib/
+/output/
+*.tsbuildinfo
