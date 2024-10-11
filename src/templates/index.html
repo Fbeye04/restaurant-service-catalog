@@ -2,18 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Restaurant Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script defer src="../scripts/index.js"></script>
   </head>
   <body>
-    <h1>Restaurant Apps Starter Project</h1>
-    <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-    <p>
-      Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros
-      sebagai background hero elemen.
-    </p>
-    <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
+    <header>
+      <nav class="nav">
+        <h1 class="title">RestoMate</h1>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li>Home</li>
+          <li>Favorite</li>
+          <li>About us</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="hero">
+        <img src="../public/images/heros/hero-image_1.jpg" />
+      </div>
+      <div class="card-container">
+        <h2>Explore Restaurant</h2>
+        <section class="card"></section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Copyright &#169; 2024 - RestoMate</p>
+    </footer>
   </body>
 </html>
