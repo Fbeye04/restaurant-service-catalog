@@ -10,33 +10,78 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="../styles/main.css" />
     <script defer src="../scripts/index.js"></script>
   </head>
   <body>
+    <!--Skip to content link-->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <header>
-      <nav class="nav">
-        <h1 class="title">RestoMate</h1>
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-          <li>Home</li>
-          <li>Favorite</li>
-          <li>About us</li>
+      <nav class="nav" role="navigation">
+        <h1 class="title">Resto<span>Mate</span></h1>
+        <!-- Hamburger button for mobile -->
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Sidebar navigation for mobile -->
+        <div class="sidebar" id="sidebar" aria-hidden="true">
+          <button class="close-button" aria-label="Close navigation menu">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <ul class="side">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Favorite</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/muhammad-fachrezi-barus/"
+                >About us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!--Main navigation(desktop)-->
+        <ul class="main-nav">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Favorite</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/muhammad-fachrezi-barus/"
+              >About us</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main class="container">
-      <div class="hero">
-        <img src="../public/images/heros/hero-image_1.jpg" />
-      </div>
-      <div class="card-container">
+    <main class="container" id="main-content">
+      <section class="hero" role="banner">
+        <img
+          src="./images/heros/hero-image_1.jpg"
+          alt="RestoMate featured restaurants banner"
+          class="hero-image"
+        />
+      </section>
+
+      <section class="restaurant-list">
         <h2>Explore Restaurant</h2>
-        <section class="card"></section>
-      </div>
+        <div class="card-container" id="restaurant-list">
+          <!--Restaurant cards will be inserted here-->
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
