@@ -15,27 +15,38 @@ const fetchRestaurants = async () => {
 };
 
 const createRestaurantCard = (restaurant) => {
-  const card = document.createElement("div");
+  const card = document.createElement("article"); // Changed to article for semantic HTML
   card.className = "card";
+  card.setAttribute("tabindex", "0"); // Make card focusable
+  card.setAttribute("role", "listitem");
+  card.setAttribute(
+    "aria-label",
+    `${restaurant.name} restaurant in ${restaurant.city}`
+  );
 
-  const imageSection = document.createElement("div");
-  imageSection.className = "card-image";
-  imageSection.style.backgroundImage = `url(${restaurant.pictureId})`;
-  imageSection.style.backgroundSize = "cover";
-  imageSection.style.backgroundPosition = "center";
-  imageSection.setAttribute("role", "img");
-  imageSection.setAttribute("aria-label", `Image of ${restaurant.name}`);
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "card-image";
+
+  // Create img element instead of using background-image
+  const image = document.createElement("img");
+  image.src = restaurant.pictureId;
+  image.alt = `Restaurant ${restaurant.name} in ${restaurant.city}`; // Descriptive alt text
+  image.className = "restaurant-image";
 
   const city = document.createElement("span");
   city.className = "city";
+  city.setAttribute("aria-label", `Located in ${restaurant.city}`);
   city.textContent = restaurant.city;
-  imageSection.appendChild(city);
+
+  imageContainer.appendChild(image);
+  imageContainer.appendChild(city);
 
   const content = document.createElement("div");
   content.className = "card-content";
 
   const rating = document.createElement("div");
   rating.className = "card-rating";
+  rating.setAttribute("aria-label", `Rating: ${restaurant.rating} out of 5`);
   rating.textContent = `Rating: ${restaurant.rating}`;
 
   const name = document.createElement("h3");
@@ -44,14 +55,22 @@ const createRestaurantCard = (restaurant) => {
 
   const description = document.createElement("p");
   description.className = "card-description";
-  description.textContent = restaurant.description.substring(0, 100) + "..."; // Truncate description
+  description.textContent = restaurant.description.substring(0, 100) + "...";
 
   content.appendChild(rating);
   content.appendChild(name);
   content.appendChild(description);
 
-  card.appendChild(imageSection);
+  card.appendChild(imageContainer);
   card.appendChild(content);
+
+  // Add keyboard interaction
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      card.click();
+    }
+  });
 
   return card;
 };

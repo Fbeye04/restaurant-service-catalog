@@ -92,13 +92,18 @@ body {
   align-items: center;
 }
 
+.nav ul li a:hover {
+  background-color: var(--navbar-footer);
+  width: 100%;
+}
+
 .menu-toggle {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .menu-toggle,
@@ -118,7 +123,7 @@ body {
   height: 100%;
   width: 15rem;
   z-index: 999;
-  background-color: #eee3cbc6;
+  background-color: #eee3cb67;
   box-shadow: -0.6rem 0 0.6rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -135,14 +140,12 @@ body {
 .nav .sidebar .close-button {
   position: absolute;
   top: 1rem;
-  right: 0;
-  left: 0;
   background: none;
-  border-radius: 0.5rem;
   cursor: pointer;
   color: var(--text-burger);
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: color;
+  border: none;
 }
 
 .nav .sidebar .close-button:hover {
@@ -200,7 +203,7 @@ body {
   opacity: 0.8;
 }
 
-.container h2 {
+.container .restaurant-list h2 {
   margin-top: 3rem;
   text-align: center;
 }
@@ -223,25 +226,38 @@ body {
   cursor: pointer;
   padding: 8px;
   transition: transform 0.2s;
+  outline: none;
 }
 
 .card:hover,
 .card:focus {
   transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  outline: 3px solid var(--orange); /* Add visible focus indicator */
 }
 
 .card-image {
-  display: flex;
-  align-items: flex-start;
-  padding: 0.7rem 0;
+  position: relative;
   height: 12.5rem;
   border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-image .city {
   background-color: #ffff;
   padding: 0.3rem 0.6rem;
   font-weight: var(--fw-bold);
+  position: absolute;
+  top: 0.7rem;
+  left: 0rem;
+  border-radius: 0 0.25rem 0.25rem;
 }
 
 .card-content {
@@ -270,11 +286,9 @@ body {
 
 .footer {
   text-align: center;
-  background-color: #eee3cb;
   padding: 0.5rem;
   font-size: 0.9rem;
   font-weight: var(--fw-semi-bold);
-  box-shadow: 0 -0.1rem 0.5rem var(--light-grey);
 }
 
 @media (min-width: 37.5rem) {
@@ -290,7 +304,11 @@ body {
 
 @media (min-width: 62.5rem) {
   .nav {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .nav ul li a:hover {
+    background-color: #aca38f47;
   }
 
   .nav span {
@@ -314,11 +332,13 @@ body {
     display: none;
   }
 
+  .hero-image {
+    min-width: 62.5rem;
+    width: 100%;
+  }
+
   .card-container {
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem auto;
-  }
-
-  .footer {
   }
 }
