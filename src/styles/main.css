@@ -97,6 +97,7 @@ body {
 .nav ul li a:hover {
   background-color: var(--navbar-footer);
   width: 100%;
+  outline: 3px solid var(--orange);
 }
 
 .menu-toggle {
