@@ -29,6 +29,7 @@
   box-sizing: border-box;
 }
 
+/*Removes web default styles*/
 * {
   margin: 0;
   padding: 0;
@@ -44,6 +45,7 @@ body {
   background-color: var(--background-color);
 }
 
+/*style for skip link*/
 .skip-link {
   position: absolute;
   top: -2.5rem;
@@ -122,14 +124,14 @@ body {
   left: -250px;
   height: 100%;
   width: 15rem;
-  z-index: 999;
+  z-index: 999; /* Ensuring the sidebar is in front of other elements */
   background-color: #eee3cb67;
   box-shadow: -0.6rem 0 0.6rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 3rem 2rem;
-  backdrop-filter: blur(0.6rem);
+  backdrop-filter: blur(0.6rem); /* give blur effect for sidebar */
   transition: left 0.3s ease-in-out;
 }
 
@@ -184,10 +186,6 @@ body {
 /* Main navigation (desktop) */
 .nav .main-nav {
   display: none; /* Disembunyikan di mobile */
-}
-
-.nav .main-nav {
-  display: none;
 }
 
 .hero {
@@ -296,6 +294,7 @@ body {
     max-width: 100%;
   }
 
+  /* add card layouts that appear in one column on the tablet */
   .card-container {
     grid-template-columns: repeat(2, 1fr);
     margin: 1.3rem;
@@ -337,6 +336,7 @@ body {
     width: 100%;
   }
 
+  /* add card layouts that appear in one column on the desktop */
   .card-container {
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem auto;

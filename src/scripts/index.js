@@ -3,13 +3,14 @@ import "../styles/main.css";
 
 const restaurantList = document.getElementById("restaurant-list");
 
+// retrieve data from a JSON file
 const fetchRestaurants = async () => {
   try {
     const response = await fetch("data/DATA.json");
     const data = await response.json();
     return data.restaurants;
   } catch (error) {
-    console.error("Error fetching restaurants:", error);
+    console.error("Error fetching restaurants:", error); //give the alert message for user if fetch data fail
     return [];
   }
 };
